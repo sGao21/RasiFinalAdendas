@@ -17,6 +17,14 @@
             overflow: hidden;
         }
 
+        .invisible-link {
+        color: #50b3a2; /* Color igual al de la barra de navegación */
+        }
+
+        .invisible-link:hover {
+        color: #50b3a2; /* O cualquier otro color para el hover */
+        }
+
         header {
             background: #50b3a2;
             color: white;
@@ -86,23 +94,24 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="{% url 'lista_pacientes' %}">Listar Pacientes</a></li>
-                    <li><a href="{% url 'crear_paciente' %}">Crear Paciente</a></li>
+                    <li><a href="{% url 'crear_adenda' %}">Crear Adenda</a></li>
                     <li><a href="{% url 'lista_historias_clinicas' %}">Listar Historias Clínicas</a></li>
-                    <li><a href="{% url 'crear_historia_clinica' %}">Crear Historia Clínica</a></li>
+                    <li><a href="{% url 'crear_paciente' %}" class="invisible-link" >Crear Paciente</a></li>
+                    <li><a href="{% url 'crear_historia_clinica' %} "class="invisible-link">Crear Historia Clínica</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="container">
-        <h2>Consultar Historia Clínica</h2>
-        <form action="{% url 'buscar_historia_clinica' %}" method="get">
-            <label for="id_historia">ID de Historia Clínica:</label>
-            <input type="text" id="id_historia" name="id" required>
-            <button type="submit">Buscar</button>
-        </form>        
+    <div class="container">       
+        <h2>Ver Adendas</h2>
+        <form action="{% url 'ver_adendas' %}" method="get">
+            <label for="id_historia_clinica">ID de Historia Clínica:</label>
+            <input type="text" id="id_historia_clinica" name="id_historia_clinica" required>
+            <button type="submit">Buscar Adendas</button>
+        </form>
     </div>
+
 
     <!-- Aquí puedes añadir más contenido o secciones a tu página de inicio si lo deseas -->
 

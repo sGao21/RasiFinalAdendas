@@ -10,3 +10,7 @@ class HistoriaClinica(models.Model):
     paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     fecha_creacion = models.DateField(auto_now_add=True)
     notas = models.TextField()
+
+class Adenda(models.Model):
+    historia_clinica = models.ForeignKey(HistoriaClinica, on_delete=models.CASCADE)
+    notas = models.TextField()

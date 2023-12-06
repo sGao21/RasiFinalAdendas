@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-w$*ru4xya9e2w$q&bnxeqg*itum$d9_8an0yixfdwx71&r%)(f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'FinalRasi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'adenda_db',
+        'USER': 'user1',
+        'PASSWORD': '12345',
+        'HOST': '10.128.0.10',
+        'PORT': '5432',
     }
 }
 
